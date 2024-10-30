@@ -1,0 +1,157 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url(fonts/Roboto/Roboto);
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header, .main-section{
+    padding-top: 0;
+    background-color: #EEEFF1;
+}
+
+.fixed-container{
+    margin: 0 auto;
+    /* чтоб контент не прилигал к краям экрана */
+    padding: 0 20px;
+    max-width: 1240px;
+}
+
+.menu-container{
+    padding-top: 67px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 47px;
+}
+
+.header-menu{
+    padding-right: 10px;
+    padding-top: 6px;
+}
+
+.menu{
+    display: flex;
+}
+
+nav ul li {
+    /* все буквы капсолок */
+    text-transform: uppercase;
+    /* избавляемся от точек в списке */
+    list-style-type: none;
+    letter-spacing: 1.7px;
+    font-size: 15px;
+
+}
+
+
+nav ul li a {
+   /* убираем подчеркивание в списке */ 
+   font-weight: 700;
+   margin-right: 55px;
+}
+
+nav ul li a:hover {
+    /* цвет при наведении */
+    color: #ff0000;
+}
+
+.section-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 136px;
+    padding-bottom: 1px;
+}
+
+.laptop{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.caption{
+    font-size: 44px;
+    margin-bottom: 48px;
+    letter-spacing: 2px;
+}
+
+.description{
+    margin-bottom: 50px;
+    line-height: 26px;
+    width: 580px;
+}
+
+.button{
+    width: 228px;
+    height: 70px;
+    background-color: #34547a;
+    color: #EEEFF1;
+    font-size: 22px;
+    /* чтоб появилась рука при наведении */
+    cursor: pointer;
+}
+
+.button:hover{
+    /* чтоб менялся цвет при наведении */
+    background-color: cadetblue;
+}
+
+/* ДЕЛАЕМ АККОРДИОН */
+.section-title{
+    margin: 30px 0;
+}
+
+.accordeon{
+    margin: 0 0 80px 0;
+}
+
+.item {margin-bottom: 6px;}
+
+.tabel{
+    position: relative;
+    text-transform: uppercase;
+    padding: 20px;
+    color: #EEEFF1;
+    background-color: rgb(236, 114, 69);
+}
+
+/* делаем плюсы и минусы */
+.tabel::before{
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    /* выравниваем по вертикали */
+    transform: translateY(-50%);
+}
+
+p{
+    padding: 20px;
+}
+
+.item.active .tabel::before{content: "-";}
+
+.content {
+    background-color: rgb(219, 216, 216);
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.item.active .content{
+    /* чтоб раскрывалься на высоту 100px */
+    height: 100px;
+}
+
+
+
+

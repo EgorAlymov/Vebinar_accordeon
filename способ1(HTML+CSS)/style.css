@@ -1,0 +1,355 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url(fonts/Roboto/Roboto);
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header, .main-section{
+    padding-top: 0;
+    background-color: #EEEFF1;
+}
+
+.fixed-container{
+    margin: 0 auto;
+    /* чтоб контент не прилигал к краям экрана */
+    padding: 0 20px;
+    max-width: 1240px;
+}
+
+.menu-container{
+    padding-top: 67px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 47px;
+}
+
+.header-menu{
+    padding-right: 10px;
+    padding-top: 6px;
+}
+
+.menu{
+    display: flex;
+}
+
+nav ul li {
+    /* все буквы капсолок */
+    text-transform: uppercase;
+    /* избавляемся от точек в списке */
+    list-style-type: none;
+    letter-spacing: 1.7px;
+    font-size: 15px;
+
+}
+
+
+nav ul li a {
+   /* убираем подчеркивание в списке */ 
+   font-weight: 700;
+   margin-right: 55px;
+}
+
+nav ul li a:hover {
+    /* цвет при наведении */
+    color: #ff0000;
+}
+
+.section-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 136px;
+    padding-bottom: 1px;
+}
+
+.laptop{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.caption{
+    font-size: 44px;
+    margin-bottom: 48px;
+    letter-spacing: 2px;
+}
+
+.description{
+    margin-bottom: 50px;
+    line-height: 26px;
+    width: 580px;
+}
+
+.button{
+    width: 228px;
+    height: 70px;
+    background-color: #34547a;
+    color: #EEEFF1;
+    font-size: 22px;
+    /* чтоб появилась рука при наведении */
+    cursor: pointer;
+}
+
+.button:hover{
+    /* чтоб менялся цвет при наведении */
+    background-color: cadetblue;
+}
+
+/* ДЕЛАЕМ АККОРДИОН */
+.section-title{
+    margin: 30px 0;
+}
+
+.accordion-menu{
+    margin: 0 0 80px 0;
+}
+
+.title{
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: rgb(236, 114, 69);
+    color: #EEEFF1;
+    /* центруем */
+    display: flex;
+    align-items: center;
+    /* чтоб содержимое было разбросано по разным концам */
+    justify-content: space-between;
+}
+
+.icon{
+    position: relative;
+    width: 14px;
+}
+/* добавляем палочки */
+.icon::before, .icon::after {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 3px;
+    background-color: #EEEFF1;
+}
+/* отдельно делаем плюс */
+.icon::after {
+    /* меняем положение на 90 градусов */
+    transform: rotate(90deg);
+    /* чтоб поворот был плавный */
+    transition: .5sec linear;
+}
+
+.text{
+    line-height: 36px;
+    margin: 0 0 6px 0;
+    background-color: rgb(219,216,216);
+    opacity: 0;
+    height: 0;
+}
+ 
+/* оживляем аккордион */
+.item:target .text{
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+    margin: 0 0 12px 0;
+}
+
+.item:target .icon::after {
+    transform: rotate(0);
+}
+
+
+
+/* бургер - в этом случае модальное окно- вначале сделав кнопку в header-burger-icon*/
+/* .burger-icon{ */
+    /* display: none; */
+    /* margin-top: 1px; */
+    /* margin-left: 20px; */
+/* } */
+/* стилизуем отдельную линию */
+/* .burger-icon span{ */
+    /* display: block; */
+    /* height: 7px; */
+    /* width: 45px; */
+    /* background-color: #34547a; */
+/* } */
+/* .burger-icon span:nth-child(2){ */
+    /* margin: 6px 0; */
+/* } */
+
+/* .section-content{ */
+    /* padding: 700px 100px; */
+    /* border: 1px solid black; */
+    /* font-size: 26px; */
+/* } */
+/* стилизуем ссылку back */
+/* .back { */
+    /* margin-left: 50px; */
+    /* font-size: 16px; */
+/* } */
+
+/* стилизуем mobile-container */
+/* .mobile-container{ */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* position: fixed; чтоб возникал на весь экран */
+    /* top: 0; */
+    /* left: 0; */
+    /* bottom: 0; */
+    /* right: 0; */
+    /* чтоб был поверх всего контента */
+    /* z-index: 12; */
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    /* появление */
+    /* transition: all 0.8s ease 0s; */
+/* } */
+
+/* чтоб было кликание создаем псевдокласс */
+/* .mobile-container:target { */
+    /* opacity: 1; */
+    /* visibility: visible; */
+/* } */
+
+/* .popup__area{ */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
+/* } */
+
+/* .header-mobile { */
+    /* position: absolute; тк лежит в контейнере */
+    /* left: 50%; */
+    /* top: 50%; */
+    /* transform: translate(-50% -50%); */
+    /* крестик */
+    /* width: 310px; */
+    /* height: 380px; */
+    /* background-color: rgba(79, 128, 192); */
+    /* border: 1px solid grey; */
+    /* border-radius: 10px; */
+    /* overflow: auto; */
+    /* font-size: 14px; */
+/* } */
+
+/* .close-icon{ */
+    /* width: 18px; */
+    /* padding-top: 12px; */
+/* } */
+
+/* .close-icon span{ */
+    /* position: absolute; */
+    /* top: 20px; */
+    /* left: 270px; */
+    /* display: block; */
+    /* height: 1px; */
+    /* width: 20px; */
+    /* background-color: rgba(232, 235, 52); */
+/* } */
+
+/* крестик */
+/* .close-icon span:first-child {transform: rotate(45deg);} */
+/* deg-градусы */
+/* .close-icon span:last-child {transform: rotate(-45deg);} */
+
+/* .mobile-list { */
+    /* padding-left: 25px; */
+    /* margin-top: 0px; */
+    /* padding-top: 65px; */
+    /* выстраиваем положение внутри контейнера */
+    /* list-style-type: none; */
+    /* padding-left: 0; */
+    /* font-size: 20px; */
+/* } */
+
+/* .mobile-list li{ */
+    /* text-align: center; */
+    /* padding-bottom: 10px; */
+    /* letter-spacing: -0.36px; */
+    /* padding-top: 9px; */
+    /* margin: 0 auto; */
+    /* border-bottom: 1px solid lightgrey; */
+    /* width: 120px; */
+    /* text-transform: uppercase; */
+/* } */
+
+/* .mobile-list li:last-child{border-bottom: none;} */
+
+/* .mobile-list a{ */
+    /* text-decoration: none; */
+    /* color: #EEEFF1; */
+    /* outline: none; */
+/* } */
+
+/* .mobile-list a:hover{color:  rgba(232, 235, 52); } */
+
+/* адаптация */
+/* @media (max-width: 1250px) {
+    .description{
+        margin-bottom: 70px;
+        width: 100%;
+    } */
+
+    /* .right-part{ */
+        /* чтоб правая часть не залазила на монитор */
+        /* padding-left: 80px;}
+    
+    .laptop{
+        padding-left: 50px;
+    }
+     */
+/* } */
+/* на 1046px делаем медиа-запрос, тк перескакивает текст h1 */
+/* @media (max-width: 1046px) {
+    .logo{padding: 0;} */
+    /* прячем меню */
+    /* .header-menu{display: none;} */
+    /* делаем, чтоб section-container располагался вертикально */
+    /* .section-container{
+        display: block;
+        align-content: center;
+        padding-top: 50px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .right-part{
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+    .laptop{
+        padding: 0;
+        margin: 0 auto 40px auto;
+        text-align: center;
+    } */
+    /* меняем дизайн верстку */
+    /* .caption{
+        font-size: 24px;
+    } */
+    /* стилизуем menu-container */
+    /* .menu-container{
+        padding-top: 30px;
+    }
+    .burger-icon{
+        display: block;
+    }
+    .burger-icon span{
+        height: 2px;
+        width: 24px;
+    }
+    .laptop img {width: 350px;}
+}
+
+@media (max-width: 525px) {
+    .laptop img {width: 250px;}
+} */
+
+
+
